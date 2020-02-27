@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world whith vue.js</title>
+</head>
+<body>
+  
+  <div id="app">
+
+    <h1>hola</h1>
+ <!--ineterpolacion con vue {{}}-->
+
+     <H1> {{name}}</H1>
+      <!--v-model permite hacer una coneccion directa con en inout y el archivo js-->
+     <input type="text" v-model="nuevojuego" @keyup.enter="agregarJuegos">
+    
+    
+     
+     <!--@click = a v-on:click-->
+     <button @click=" agregarJuegos" >Add</button>
+
+     <ul>
+         <!--V-for hace un loop-->
+
+         <li v-for="juegos of juegos"> 
+          <input type="number" v-model.number="juegos.cantidad" @keyup.enter="agregarJuegos"> 
+          - {{juegos.nombre}} 
+         
+
+            <span v-if="juegos.cantidad >10"> -limite de venta</span>
+         </li>
+
+         
+     </ul>
+
+  </div>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"> </script>
+</body>
+</html>
